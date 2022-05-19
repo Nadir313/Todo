@@ -11,13 +11,16 @@ function ToList() {
     const mylist = JSON.parse(localStorage.getItem('todos'));
     // console.log('mylist=',mylist);
 
-    const [todos, setTodos] = useState([mylist]);
+    const [todos, setTodos] = useState(mylist);
 
     // useEffect(() => {
     //     if (todos) {
     //         setTodos(todos);
     //     }
     // }, []);
+
+
+    
 
     useEffect(()=>{
         localStorage.setItem("todos", JSON.stringify(todos))
