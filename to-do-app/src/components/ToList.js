@@ -10,20 +10,25 @@ function ToList() {
     // retrieving data from local storage 
     const addedTodo = JSON.parse(localStorage.getItem('todos'));
     const [todos, setTodos] = useState(addedTodo);
+    // let [deletey, setDelete ] = useState(false)
 
     // sending data to local storage 
     useEffect(()=>{
         localStorage.setItem("todos", JSON.stringify(todos))
     }, [todos]) ;
 
+    // The delete Function .
     const DeleteHandler = (e)=>{
         console.log(e.value) ;
     }
 
+
+    // the edit function .
     const editHandler = ()=>{
         console.log("edit was cicked");
     }
 
+    // function that add to do . 
     const addTodo = (todo)=>{
         if(todo.task.trim().length !==0 ){
         }else{
@@ -41,7 +46,7 @@ function ToList() {
             <TodoInput onSubmit={addTodo} /> 
             {todos.map(todo =>{
                 return(
-                    <div  key={todo.id}  className='bg-info border border-2 d-flex justify-content-between p-2 m-2'>
+                    <div  key={todo.id}  className='bg-info border border-2 rounded d-flex justify-content-between p-2 m-2'>
                             <TodoItems task={todo.task} />
                         <div>
                             <MdOutlineDeleteForever className='bg-danger p-1 border border-2' onClick={DeleteHandler} />

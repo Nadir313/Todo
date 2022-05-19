@@ -8,13 +8,14 @@ function TodoInput(props) {
         setTask(event.target.value)
     }
 
-    // Form 
+    // Handling the Form submission
     const submitHandler = (event)=>{
         event.preventDefault() ;
 
         props.onSubmit({
             id : Math.floor(Math.random()*100000),
-            task : task
+            task : task,
+            ndate :Date.now()
         })
 
         setTask("")
