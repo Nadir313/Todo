@@ -1,7 +1,10 @@
 import React, {useState} from 'react'
+import Moment from "react-moment";
+
 
 function TodoInput(props) {
     const [task, setTask] = useState("") ;
+    // const [date, setDate] = useState(Date())
 
     // adding a task and setting setTask from the input values .
     const onChangeHandler = (event)=>{
@@ -15,7 +18,7 @@ function TodoInput(props) {
         props.onSubmit({
             id : Math.floor(Math.random()*100000),
             task : task,
-            ndate :Date.now()
+            // date_create: Moment().format("DD-MM-YYYY hh:mm:ss")
         })
 
         setTask("")
