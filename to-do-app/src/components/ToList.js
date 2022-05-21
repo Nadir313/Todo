@@ -18,8 +18,11 @@ function ToList() {
     }, [todos]) ;
 
     // The delete Function .
-    const DeleteHandler = (e)=>{
-        console.log(e.value) ;
+    const DeleteHandler = (id)=>{
+        console.log(id) ;
+        const removeItem = todos.filter((todo) => {
+        return todo.id !== id;  });
+        setTodos(removeItem);
     }
 
 
@@ -47,10 +50,15 @@ function ToList() {
             {todos.map(todo =>{
                 return(
                     <div  key={todo.id}  className='bg-info border border-2 rounded d-flex justify-content-between p-2 m-2'>
-                            <TodoItems task={todo.task} />
+                            <TodoItems task={todo.task}  />
+                            <MdOutlineDeleteForever className='bg-danger p-1 border border-2' onClick={()=>{
+                                DeleteHandler(todo.id)
+                            }} />
+                            <BiEdit className='bg-success mx-1 p-1 border border-2' onClick={()=>{
+                                editHandler(todo.id)
+                                }}  />    
                         <div>
-                            <MdOutlineDeleteForever className='bg-danger p-1 border border-2' onClick={DeleteHandler} />
-                            <BiEdit className='bg-success mx-1 p-1 border border-2' onClick={editHandler}  />       
+                             
                         </div> 
                     </div>
                 )
