@@ -1,6 +1,4 @@
 import React, {useState} from 'react'
-import Moment from "react-moment";
-
 
 function TodoInput(props) {
     const [task, setTask] = useState("") ;
@@ -17,8 +15,7 @@ function TodoInput(props) {
 
         props.onSubmit({
             id : Math.floor(Math.random()*100000),
-            task : task,
-            // date_create: Moment().format("DD-MM-YYYY hh:mm:ss")
+            task : task
         })
 
         setTask("")
@@ -35,6 +32,7 @@ function TodoInput(props) {
             name="todo"
             onChange={onChangeHandler}
             /> 
+            
         </div>
         <button className='btn btn-info  text-dark fw-bold m-2 w-25'>Add To Do</button>
     </form>

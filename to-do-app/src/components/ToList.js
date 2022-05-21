@@ -28,14 +28,13 @@ function ToList() {
 
     // the edit function .
     const editHandler = (id)=>{
-      
         console.log(id) ;
-        console.log(todos)
-        todos.map(todo =>{
-            if(todo.id == id){
-                console.log("test")
-            }
+        let editedTodo = todos.filter(todo =>{
+           return todo.id == id ;
         })
+        console.log(editedTodo)
+       let editedData =  prompt("test",editedTodo[0].task)
+       console.log(editedData) ;
     }
 
     // function that add to do . 
@@ -57,7 +56,7 @@ function ToList() {
             {todos.map(todo =>{
                 return(
                     <div  key={todo.id}  className='bg-info border border-2 rounded d-flex justify-content-between p-2 m-2'> 
-                     <TodoItems task={todo.task}    />  
+                     <TodoItems task={todo.task} />  
                         <div>
                             <MdOutlineDeleteForever className='bg-danger p-1 border border-2' onClick={()=>{
                                 DeleteHandler(todo.id)
