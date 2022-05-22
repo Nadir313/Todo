@@ -4,6 +4,8 @@ import moment from "moment";
 
 function TodoInput(props) {
     const [task, setTask] = useState("") ;
+    const [isDone , setIsdone] = useState([])
+
 
     // adding a task and setting setTask from the input values .
     const onChangeHandler = (event)=>{
@@ -17,11 +19,14 @@ function TodoInput(props) {
         props.onSubmit({
             id : Math.floor(Math.random()*100000),
             task : task,
-            date :moment(Date()).format("DD/MM/YYYY hh:mm:ss") 
+            date :moment(Date()).format("DD/MM/YYYY hh:mm:ss") ,
+            isDone: false 
         })
-
+        setIsdone(!isDone) ;
         setTask("")
     }
+
+
 
   return (
     <form onSubmit={submitHandler}>
