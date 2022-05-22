@@ -2,7 +2,6 @@ import React, {useState} from 'react'
 
 function TodoInput(props) {
     const [task, setTask] = useState("") ;
-    // const [date, setDate] = useState(Date())
 
     // adding a task and setting setTask from the input values .
     const onChangeHandler = (event)=>{
@@ -32,9 +31,9 @@ function TodoInput(props) {
             name="todo"
             onChange={onChangeHandler}
             /> 
-            
+
         </div>
-        <button className='btn btn-info  text-dark fw-bold m-2 w-25'>Add To Do</button>
+        <button className='btn btn-success  text-dark fw-bold m-2 w-25'>Add To Do</button>
     </form>
   )
 }
