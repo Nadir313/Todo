@@ -14,7 +14,7 @@ function TodoItems({...todo}) {
   return (
     <>   
     <div>
-      <h3 style={style2}> {todo.task} <span className='text-danger '> {todo.date} </span> </h3>
+      <h3 style={style2}> {todo.task} <span className='text-danger'> {todo.date} </span> </h3>
     </div>
     <h2></h2>
     </>
