@@ -1,4 +1,4 @@
-import ToList from './components/ToList';
+import ToDoList from './components/ToDoList';
 import './App.css';
 
 function App() {
@@ -6,7 +6,7 @@ function App() {
     <div className="App">
       <header className="App-header">
       <div className='bg-info border border-2 fw-bolder text-dark m-2 p-2 w-100'>To Do List Using React</div>
-        <ToList />
+        <ToDoList />
       </header>
     </div>
   );

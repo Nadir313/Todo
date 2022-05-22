@@ -7,7 +7,7 @@ import {BiEdit} from "react-icons/bi" ;
 
 import "../style/style.css" ;
 
-function ToList() {
+function ToDoList() {
 
     // retrieving data from local storage 
     const addedTodo = JSON.parse(localStorage.getItem('todos'));
@@ -18,14 +18,16 @@ function ToList() {
         localStorage.setItem("todos", JSON.stringify(todos))
     }, [todos]) ;
 
-    // The delete Function .
+    // The delete Function .==> we pass the id and then we filter over the todos array wich only return the todos who doesn't contains the wanted element . 
     const DeleteHandler = (id)=>{
         const removeItem = todos.filter((todo) => {
         return todo.id !== id;  });
         setTodos(removeItem);
     }
 
-    // the edit function .
+    /* the edit function .==> the chosen value is being edited in the 
+        prompt window  After that the data is sent to the localstorage 
+        and later the data is retrieved to be shown to the user . */
     const editHandler = (id)=>{
         let editedTodo = todos.filter(todo =>{
            return todo.id === id ;
@@ -59,13 +61,13 @@ function ToList() {
     }
 
   return (
-    <div id='myForm' className='text-light w-25'>
+    <div id='myForm' className='text-dark w-25'>
         <h1 style={style1} className=' p-3 m-3'>To Do List  < AiFillSchedule /> </h1>
-            <TodoInput onSubmit={addTodo} /> 
+            <TodoInput onSubmit={addTodo}  /> 
             {todos.map(todo =>{
                 return(
                     <div  key={todo.id}  className='bg-secondary border border-2 rounded d-flex justify-content-between p-2 m-2'> 
-                        <TodoItems task={todo.task} />
+                        <TodoItems task={todo.task}  date={todo.date} />
                         <div>
 
                             <MdOutlineDeleteForever className='bg-danger p-1 border border-2' onClick={()=>{
@@ -83,4 +85,4 @@ function ToList() {
   )
 }
 
-export default ToList ;
+export default ToDoList ;
