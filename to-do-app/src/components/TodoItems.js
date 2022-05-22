@@ -7,7 +7,7 @@ function TodoItems({...todo}) {
   
   const style2 ={
     color:"Black",
-    fontSize:"19px ",
+    fontSize:"16px ",
     paddingTop:"16px"
    } ;
 
