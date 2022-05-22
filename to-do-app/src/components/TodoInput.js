@@ -10,7 +10,7 @@ function TodoInput(props) {
         setTask(event.target.value)
     }
 
-    // Handling the Form submission
+    // Handling the Form submission e
     const submitHandler = (event)=>{
         event.preventDefault() ;
 
