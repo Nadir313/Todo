@@ -7,6 +7,7 @@ import TodoItems from './TodoItems';
 import "../style/style.css" ;
 
 function ToList() {
+
     // retrieving data from local storage 
     const addedTodo = JSON.parse(localStorage.getItem('todos'));
     const [todos, setTodos] = useState(addedTodo);
@@ -18,7 +19,7 @@ function ToList() {
 
     // The delete Function .
     const DeleteHandler = (id)=>{
-        console.log(id) ;
+        // console.log(id) ;
         const removeItem = todos.filter((todo) => {
         return todo.id !== id;  });
         setTodos(removeItem);
@@ -30,11 +31,23 @@ function ToList() {
     const editHandler = (id)=>{
         console.log(id) ;
         let editedTodo = todos.filter(todo =>{
-           return todo.id == id ;
+           return todo.id === id ;
         })
+
         console.log(editedTodo)
+
        let editedData =  prompt("test",editedTodo[0].task)
        console.log(editedData) ;
+       const edit = todos.map((todo)=>{
+           if(todo.id === id){
+               todo.task = editedData ;
+           }
+           return todo.task ;
+       }) 
+       console.log(edit) ;
+       const edited = [...todos, edit]
+       const newEdited = edited.pop() ;
+       setTodos(edited)
     }
 
     // function that add to do . 
