@@ -1,5 +1,4 @@
 import React, {useState, useEffect} from 'react';
-import Done from "./Done" ;
 import TodoInput from './TodoInput';
 import TodoItems from './TodoItems';
 import {AiFillSchedule} from "react-icons/ai" ;
@@ -71,7 +70,6 @@ function ToDoList() {
                     <div  key={todo.id}  className='bg-secondary border border-2 rounded d-flex justify-content-between p-2 m-2'> 
                         <TodoItems task={todo.task}  date={todo.date} /> 
                         <div>
-                           <Done />
                             <MdOutlineDeleteForever className='bg-danger p-1 border border-2' onClick={()=>{
                                 DeleteHandler(todo.id)
                             }} />

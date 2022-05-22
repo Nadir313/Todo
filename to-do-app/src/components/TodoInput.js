@@ -20,7 +20,7 @@ function TodoInput(props) {
             id : Math.floor(Math.random()*100000),
             task : task,
             date :moment(Date()).format("DD/MM/YYYY hh:mm:ss") ,
-            isDone: false 
+            isDone: false
         })
         setIsdone(!isDone) ;
         setTask("")
