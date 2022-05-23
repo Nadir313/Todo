@@ -11,8 +11,8 @@ import "../style/style.css" ;
 function ToDoList() {
 
     // retrieving data from local storage 
-    const addedTodo = JSON.parse(localStorage.getItem('todos'));
-    const [todos, setTodos] = useState(addedTodo);
+    const addedTodo = (JSON.parse(localStorage.getItem('todos'))).reverse();
+    const [todos, setTodos] = useState(addedTodo.reverse());
 
     // sending data to local storage 
     useEffect(()=>{
@@ -51,18 +51,21 @@ function ToDoList() {
            
        }) 
        const edited = [...todos, edit]
-        edited.pop() ;
+        edited.pop();
        setTodos(edited)
     }
+
     // the complete handler is basically applying a line through the completed Task .
     const completeHandler =(id)=>{
         console.log(id)
-        todos.map(todo =>{
+        let mapped = todos.map(todo =>{
             if(todos.id === id){
-                return { ...todos, isDone : !todos.isDone } ;
+                return { ...todos, isDone : !isDone  } ;
             }
             return todo
         })
+        console.log(mapped) ;
+        console.log(isDone) ;
       
     }
 

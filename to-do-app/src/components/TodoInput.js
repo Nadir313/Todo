@@ -19,7 +19,7 @@ function TodoInput(props) {
         props.onSubmit({
             id : Math.floor(Math.random()*100000),
             task : task,
-            date :moment(Date()).format("DD/MM/YYYY hh:mm:ss") ,
+            date :moment(Date()).format("DD/MM/YY hh:mm:ss") ,
             isDone: false
         })
         setIsdone(!isDone) ;
