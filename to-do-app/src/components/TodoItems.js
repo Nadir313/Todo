@@ -21,7 +21,7 @@ function TodoItems({...todo}) {
     <>   
     <div  >
       <span>{todo.isDone}</span>
-      <h3 style={todo.isDone ? style3 : {color:"black"} }>{todo.task} <span className='text-danger p-1 fw-bold '> {todo.date}</span></h3>
+      <h3 style={todo.isDone ? style3 : style2 }>{todo.task} <span className='text-danger p-1 fw-bold '> {todo.date}</span></h3>
     </div>
     </>
   )
