@@ -37,7 +37,7 @@ function ToDoList() {
            return todo.id === id ;
         })
        let editedData =  prompt("Edit your To Do",editedTodo[0].task)
-       if(editedData.length == 0)return ;
+       if(editedData.length === 0)return ;
        const edit = todos.map((todo)=>{
            if(todo.id === id){
               if(todo.task.trim().length !== 0 ){
@@ -57,15 +57,18 @@ function ToDoList() {
 
     // the complete handler is basically applying a line through the completed Task .
     const completeHandler =(id)=>{
-        console.log(id)
+        console.log("length is ", todos.length) ;
+      
+
         let mapped = todos.map(todo =>{
-            if(todos.id === id){
-                return { ...todos, isDone : !isDone  } ;
-            }
-            return todo
-        })
-        console.log(mapped) ;
-        console.log(isDone) ;
+                if(todo.id === id){
+                    return { ...todo, isDone : !todo.isDone  } ;
+                }
+                return todo;
+            })
+
+        console.log(mapped)
+        setTodos(mapped);        
       
     }
 
