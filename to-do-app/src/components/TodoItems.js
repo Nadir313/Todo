@@ -1,10 +1,8 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import "bootstrap/dist/css/bootstrap.min.css" ;
 
+function TodoItems({...todos}) {
 
-
-function TodoItems({...todo}) {
-  
   const style2 ={
     color:"Black",
     fontSize:"16px ",
@@ -12,16 +10,14 @@ function TodoItems({...todo}) {
    } ;
 
    const style3 = {
-     color:"red" ,
+     color:"DarkGreen" ,
     textDecorationLine: 'line-through',
-    textDecorationStyle: 'solid',
    }
 
   return (
     <>   
     <div  >
-      <span>{todo.isDone}</span>
-      <h3 style={todo.isDone ? style3 : style2 }>{todo.task} <span className='text-danger p-1 fw-bold '> {todo.date}</span></h3>
+      <h3 style={todos.complete ? style3 : style2 }>{todos.task} <span className='text-danger p-1 fw-bold '> {todos.date}</span></h3>
     </div>
     </>
   )
