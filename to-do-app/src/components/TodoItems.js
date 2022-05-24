@@ -1,4 +1,3 @@
-import React, {useEffect, useState} from 'react'
 import "bootstrap/dist/css/bootstrap.min.css" ;
 
 function TodoItems({...todos}) {
@@ -8,12 +7,10 @@ function TodoItems({...todos}) {
     fontSize:"16px ",
     paddingTop:"16px"
    } ;
-
    const style3 = {
      color:"DarkGreen" ,
     textDecorationLine: 'line-through',
    }
-
   return (
     <>   
     <div  >

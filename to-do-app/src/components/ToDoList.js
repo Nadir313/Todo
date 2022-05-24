@@ -14,15 +14,12 @@ function ToDoList() {
     const addedTodo = (JSON.parse(localStorage.getItem('todos'))).reverse();
     const [todos, setTodos] = useState(addedTodo.reverse());
 
-    const handlers = []
-
-        // sending data to local storage 
+        // Sending Data To Local Storage 
         useEffect(()=>{
             localStorage.setItem("todos", JSON.stringify(todos))
         }, [todos]) ;
 
-
-        // function adding a to do . 
+        // function adding a To Do . 
         const addTodo = (todo)=>{
             if(todo.task.trim().length !==0 ){
             }else{
@@ -34,7 +31,6 @@ function ToDoList() {
             setTodos(newTobeDone) ;
         }
 
-
         /*The delete Function .==> we pass the id and then we filter over the todos array
         wich only return the todos who doesn't contains the wanted element . */
         const DeleteHandler = (id)=>{
@@ -42,7 +38,6 @@ function ToDoList() {
             return todo.id !== id;  });
             setTodos(removeItem);
         }
-
 
         /* the edit function .==> the chosen value is being edited in the 
             prompt window,  After that the data is sent to the localstorage 
@@ -70,7 +65,6 @@ function ToDoList() {
         setTodos(edited)
         }
 
-        
     // the complete handler is basically applying a line through the completed Task .
     const completeHandler =(id)=>{
         let mapped = todos.map(todo =>{
@@ -82,7 +76,6 @@ function ToDoList() {
             })
         setTodos(mapped);        
     }
-
     const style1 = {
         color : "DarkSlateGrey" 
     }
