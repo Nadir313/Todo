@@ -11,8 +11,11 @@ import "../style/style.css" ;
 function ToDoList() {
 
     // retrieving data from local storage 
-    const addedTodo = (JSON.parse(localStorage.getItem('todos'))).reverse();
-    const [todos, setTodos] = useState(addedTodo.reverse());
+    // localStorage.setItem("todos","walk dog") ;
+   
+    let addedTodo = ["Learn React .", "All day coding . "] ;
+    addedTodo = (JSON.parse(localStorage.getItem('todos')));
+    const [todos, setTodos] = useState(addedTodo)
 
         // Sending Data To Local Storage 
         useEffect(()=>{
